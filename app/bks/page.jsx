@@ -124,11 +124,11 @@ export default function BksPage() {
             <p>{bks.westBengal}</p>
             <a
               className="text-link"
-              href="https://www.bkswbengal.org/"
+              href={bks.westBengalHref}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visit bkswbengal.org
+              Open the BKS Bengal companion site
             </a>
           </Reveal>
           <aside className="quote-panel">
@@ -145,6 +145,10 @@ export default function BksPage() {
           <Reveal className="section-head">
             <p className="kicker">References</p>
             <h2>Authoritative sources used on this page</h2>
+            <p className="section-deck">
+              National BKS heritage records are cross-referenced with the companion BKS West
+              Bengal (BKS Bangla) project at bkswbengal.org.
+            </p>
           </Reveal>
           <ul className="source-list">
             {bks.sources.map((s) => (
