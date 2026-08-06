@@ -1,194 +1,155 @@
-﻿export default function Page() {
+﻿import Link from 'next/link';
+import Reveal from '../components/Reveal';
+import { gallery, pillars, profile, roles, social } from '../lib/data';
+
+export default function HomePage() {
   return (
     <>
-      <header className="hero">
-        <div className="hero-media" aria-hidden="true" />
-        <div className="hero-glow" aria-hidden="true" />
-        <div className="hero-brand">
-          <img
-            className="brand-logo brand-logo-left"
-            src="/logos/karmyog-21c.png"
-            alt="KarmYog for 21st Century"
-          />
-          <img
-            className="brand-logo brand-logo-right"
-            src="/logos/omnidel-ai.png"
-            alt="OmniDEL.ai"
-          />
+      <section className="hero">
+        <div className="hero-layers" aria-hidden="true">
+          <div className="hero-photo" style={{ backgroundImage: "url('/photos/events/shikhar-group.png')" }} />
+          <div className="hero-veil" />
+          <div className="hero-grain" />
+          <div className="hero-orb hero-orb-a" />
+          <div className="hero-orb hero-orb-b" />
         </div>
-        <div className="hero-content">
-          <p className="eyebrow">Update for Varsen</p>
-          <h1>OmniDEL.ai Inaugural Team Offsite</h1>
-          <p className="hero-lead">
-            OmniDEL.ai / KarmYog for 21st Century held their Inaugural Team Offsite in Kolkata
-            on 26th July 2026 — a gathering to align mission, Dharma, and agentic AI for the
-            months ahead.
+
+        <div className="hero-content wrap">
+          <p className="hero-kicker animate-rise">{profile.nameBn}</p>
+          <p className="hero-brand animate-rise delay-1">{profile.name}</p>
+          <h1 className="animate-rise delay-2">{profile.tagline}</h1>
+          <p className="hero-lead animate-rise delay-3">
+            {profile.shortTitle}. Member, Government of India High Power Committee on MSP,
+            natural farming, and crop diversification.
           </p>
-          <div className="meta-row">
-            <span>26 July 2026</span>
-            <span>UniWorld Club, UniWorld City, New Town, Kolkata</span>
-            <span>~20 members</span>
+          <div className="hero-actions animate-rise delay-4">
+            <Link className="btn btn-solid" href="/about">
+              Read the profile
+            </Link>
+            <Link className="btn btn-line" href="/media">
+              Social &amp; media
+            </Link>
           </div>
         </div>
-      </header>
 
-      <main className="wrap">
-        <section className="section">
-          <h2>Why we gathered</h2>
-          <p className="deck">
-            The team has recently grown across technology, media, and sales. This inaugural
-            experience brought everyone together to understand how OmniDEL.ai will move
-            forward over the next three to six months.
-          </p>
-          <div className="split">
-            <img className="photo" src="/photos/02-group.jpg" alt="OmniDEL.ai and KarmYog for 21st Century team group photo" />
-            <div>
-              <p>
-                The day opened with <strong>Ram Badrinathan</strong> welcoming the group and
-                leading a round of introductions across the full team.
-              </p>
-              <p>
-                From there, Ram shared the mission that frames the next chapter of OmniDEL.ai —
-                and why this moment matters for both the organisation and the people building it.
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="hero-scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <i />
+        </div>
+      </section>
 
-        <section className="section">
-          <div className="split reverse">
+      <section className="band intro-band">
+        <div className="wrap split portrait-split">
+          <Reveal className="intro-portrait" as="figure">
             <img
-              className="photo tall"
-              src="/photos/03-mahacharya.jpg"
-              alt="Mahacharya Ji speaking at the team offsite"
+              src="/photos/events/portrait-speaking.png"
+              alt="Krishan Bir Chaudhary speaking at a conference"
             />
-            <div>
-              <h2>Mahacharya Ji’s journey</h2>
-              <p className="deck">
-                A 40-year path through education, media, and technology — now culminating in agentic AI.
-              </p>
-              <p>
-                Mahacharya Ji spoke about why this work is arriving now: the power of agentic AI
-                to realise a long-held vision. Central to his message was <strong>Dharma</strong> —
-                the missing piece he believes has been absent from much of modern education.
-              </p>
-              <p>
-                He also described what is different about agentic AI: not only functionality,
-                but the relationship between the whole system we are building and how that system
-                must show up as characters and stories. The world of the acharyas and the ashrams —
-                living between the real and the virtual — will be a core part of the experience.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="brief">
-            <h2>The brief</h2>
-            <p className="deck">A concrete creative deliverable for the team</p>
+            <figcaption>Public address · Market Times / Commodity Capital platform</figcaption>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="kicker">Who he is</p>
+            <h2>Farmer organisation leadership with public-sector depth.</h2>
+            <p className="lede">{profile.summary}</p>
             <p>
-              Mahacharya Ji gave a specific brief: create a <strong>90-second AI-generated experience</strong>,
-              integrated with a video of a real experience. The brief has been shared; some team
-              members have indicated they will take it on. He is waiting for confirmation on who
-              will deliver this output.
+              His work connects micro-level concerns about seeds, royalties, and rural livelihoods
+              with macro debates on trade, tax reform, and sovereignty — insisting that growth
+              strategies protect India’s agrarian majority.
             </p>
-          </div>
-        </section>
+            <Link className="text-link" href="/about">
+              Full biography &amp; roles
+            </Link>
+          </Reveal>
+        </div>
+      </section>
 
-        <section className="section voice-section">
-          <div className="split voice-split">
-            <figure className="voice-portrait">
-              <img
-                className="photo portrait-glow"
-                src="/photos/09-olivier-jager.png"
-                alt="Olivier Jager, global management team"
-              />
-              <figcaption>Olivier Jager</figcaption>
-            </figure>
+      <section className="band roles-strip">
+        <div className="wrap">
+          <Reveal>
+            <p className="kicker">Institutional ground</p>
+            <h2>Key positions</h2>
+          </Reveal>
+          <div className="role-rail">
+            {roles.slice(0, 4).map((role, i) => (
+              <Reveal key={`${role.title}-${role.org}`} className="role-chip" delay={i * 80} as="article">
+                <span>{role.title}</span>
+                <strong>{role.org}</strong>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <Link className="text-link" href="/about#roles">
+              See all roles
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="band pillars-home">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">Agenda</p>
+            <h2>Four pillars of public work</h2>
+          </Reveal>
+          <div className="pillar-grid">
+            {pillars.map((p, i) => (
+              <Reveal key={p.slug} className="pillar-card" delay={i * 90} as="article">
+                <div
+                  className="pillar-visual"
+                  style={{ backgroundImage: `url('${p.image}')` }}
+                  aria-hidden="true"
+                />
+                <div className="pillar-body">
+                  <span className="pillar-index">0{i + 1}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.lead}</p>
+                  <Link href={`/issues#${p.slug}`}>Open issue</Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band gallery-preview">
+        <div className="wrap">
+          <Reveal className="section-head row-head">
             <div>
-              <h2 className="voice-heading">Global voice in the room</h2>
-              <p>
-                Part of the global management team joined as well.{' '}
-                <strong>Olivier Jager</strong> spoke with the group about why he is excited by —
-                and aligned with — this mission.
-              </p>
-              <p>
-                Together with Ram’s framing and Mahacharya Ji’s vision, the session gave the
-                expanded team a shared language for the work ahead.
-              </p>
+              <p className="kicker">Visuals</p>
+              <h2>Gallery</h2>
             </div>
+            <Link className="text-link" href="/gallery">
+              View all
+            </Link>
+          </Reveal>
+          <div className="mosaic">
+            {gallery.slice(0, 4).map((item, i) => (
+              <Reveal key={item.src} className={`mosaic-item m${i + 1}`} delay={i * 70} as="figure">
+                <img src={item.src} alt={item.alt} />
+                <figcaption>{item.caption}</figcaption>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="section">
-          <h2>Venue &amp; hospitality</h2>
-          <p className="deck">
-            UniWorld Club provided a strong setting for a first gathering — and the local team
-            served excellent ashram food throughout the day.
-          </p>
-          <div className="gallery" aria-label="Event photo gallery">
-            <figure className="g1">
-              <img src="/photos/05-listening.jpg" alt="Team listening during the offsite session" />
-            </figure>
-            <figure className="g2">
-              <img src="/photos/06-team-listen.jpg" alt="Team members attending the discussion" />
-            </figure>
-            <figure className="g3">
-              <img src="/photos/07-recording.jpg" alt="Session being recorded for documentation" />
-            </figure>
-            <figure className="g4">
-              <img src="/photos/08-venue.jpg" alt="Meeting room at UniWorld Club" />
-            </figure>
-            <figure className="g5">
-              <img src="/photos/01-group.jpg" alt="Full team group photograph" />
-            </figure>
-            <figure className="g6">
-              <img src="/photos/02-group.jpg" alt="Team standing together after the meeting" />
-            </figure>
-          </div>
-        </section>
-
-        <section className="section">
-          <h2>In closing</h2>
-          <p>
-            This was the inaugural team meeting of OmniDEL.ai / KarmYog for 21st Century —
-            about twenty people, one shared mission, and a clear creative brief to carry forward.
-          </p>
-          <h3 className="next-steps-label">Next steps</h3>
-          <ol className="next-steps">
-            <li>
-              Implement the platform now with the captive <strong>COCO</strong> model — the
-              Company-Owned Company-Operated model of the KarmYog Vatika.
-            </li>
-            <li>
-              Implement and get a set of SMEs to purchase and use the OmniDEL.ai platform.
-            </li>
-          </ol>
-        </section>
-
-        <footer className="footer">
-          <div className="footer-brand">
-            <img
-              className="footer-logo"
-              src="/logos/karmyog-21c.png"
-              alt="KarmYog for 21st Century"
-            />
-            <img
-              className="footer-logo"
-              src="/logos/omnidel-ai.png"
-              alt="OmniDEL.ai"
-            />
-            <div>
-              OmniDEL.ai / KarmYog for 21st Century · Inaugural Team Offsite · Kolkata · 26 July 2026
-            </div>
-          </div>
-          <div>
-            <a href="https://omnidel.ai" target="_blank" rel="noopener noreferrer">
-              OmniDEL.ai
-            </a>
-          </div>
-        </footer>
-      </main>
+      <section className="band connect-cta">
+        <div className="wrap cta-panel">
+          <Reveal>
+            <p className="kicker light">Connect</p>
+            <h2>Follow his public channels</h2>
+            <p>Facebook, Instagram, YouTube, X — and the BKS West Bengal platform.</p>
+          </Reveal>
+          <Reveal className="social-row" delay={100}>
+            {social.map((s) => (
+              <a key={s.id} href={s.href} target="_blank" rel="noopener noreferrer">
+                {s.label}
+              </a>
+            ))}
+            <Link href="/contact">All links</Link>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
