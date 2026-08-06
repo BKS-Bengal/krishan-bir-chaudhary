@@ -26,7 +26,7 @@ export default function SiteNav() {
       <div className="nav-inner">
         <Link className="nav-brand" href="/">
           <span className="nav-brand-en">{profile.name}</span>
-          <span className="nav-brand-bn">{profile.nameBn}</span>
+          <span className="nav-brand-hi">{profile.nameHi}</span>
         </Link>
 
         <button

@@ -26,7 +26,7 @@ export default function HomePage() {
         </div>
 
         <div className="hero-content wrap">
-          <p className="hero-kicker animate-rise">{profile.nameBn}</p>
+          <p className="hero-kicker animate-rise">{profile.nameHi}</p>
           <p className="hero-brand animate-rise delay-1">{profile.name}</p>
           <h1 className="animate-rise delay-2">{profile.brandLine}</h1>
           <p className="hero-lead animate-rise delay-3">{profile.tagline}</p>

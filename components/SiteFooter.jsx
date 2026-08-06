@@ -7,7 +7,7 @@ export default function SiteFooter() {
       <div className="wrap footer-top">
         <div>
           <p className="footer-name">{profile.name}</p>
-          <p className="footer-bn">{profile.nameBn}</p>
+          <p className="footer-hi">{profile.nameHi}</p>
           <p className="footer-tag">{profile.shortTitle}</p>
           <p className="footer-contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>

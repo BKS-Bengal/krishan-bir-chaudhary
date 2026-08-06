@@ -53,7 +53,7 @@ export default function BksPage() {
             </a>
           </Reveal>
           <aside className="quote-panel">
-            <p className="quote-bn">বাংলার জন্য কৃষকের মর্যাদা, স্বনির্ভর কৃষি এবং ব্যবহারিক জ্ঞান।</p>
+            <p className="quote-hi">बंगाल के लिए किसान की गरिमा, आत्मनिर्भर कृषि और व्यावहारिक ज्ञान।</p>
             <p className="quote-en">
               Farmer dignity, self-reliant agriculture, and practical knowledge for Bengal.
             </p>

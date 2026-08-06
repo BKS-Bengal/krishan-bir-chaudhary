@@ -12,7 +12,7 @@
   --stroke: rgba(18, 23, 20, 0.12);
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Karla', system-ui, sans-serif;
-  --font-bn: 'Noto Sans Bengali', 'Karla', sans-serif;
+  --font-hi: 'Noto Sans Devanagari', 'Karla', sans-serif;
   --nav-h: 76px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -115,8 +115,8 @@ code {
   line-height: 1.1;
 }
 
-.nav-brand-bn {
-  font-family: var(--font-bn);
+.nav-brand-hi {
+  font-family: var(--font-hi);
   font-size: 0.78rem;
   color: var(--muted);
 }
@@ -254,7 +254,7 @@ code {
 }
 
 .hero-kicker {
-  font-family: var(--font-bn);
+  font-family: var(--font-hi);
   font-size: clamp(1rem, 2.4vw, 1.25rem);
   color: var(--grain-soft);
   margin-bottom: 10px;
@@ -782,15 +782,15 @@ h2 {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.bn-quote {
+.hi-quote {
   margin: 22px 0;
   padding: 18px 0;
   border-top: 1px solid var(--stroke);
   border-bottom: 1px solid var(--stroke);
 }
 
-.bn-quote p {
-  font-family: var(--font-bn);
+.hi-quote p {
+  font-family: var(--font-hi);
   font-size: 1.2rem;
   color: var(--field-deep);
   max-width: 28ch;
@@ -984,8 +984,8 @@ h2 {
   margin-bottom: 4px;
 }
 
-.footer-bn {
-  font-family: var(--font-bn);
+.footer-hi {
+  font-family: var(--font-hi);
   color: var(--grain-soft);
   margin-bottom: 10px;
 }
@@ -1313,8 +1313,8 @@ h2 {
   color: #fff;
 }
 
-.quote-bn {
-  font-family: var(--font-bn);
+.quote-hi {
+  font-family: var(--font-hi);
   font-size: 1.25rem;
   color: var(--grain-soft);
   margin-bottom: 12px;
