@@ -1341,6 +1341,103 @@ h2 {
   font-weight: 500;
 }
 
+.heritage-rail {
+  display: grid;
+  gap: 14px;
+}
+
+.heritage-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 18px;
+  padding: 20px 18px;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--grain);
+}
+
+.heritage-year {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sap);
+}
+
+.heritage-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 560;
+  color: var(--field-deep);
+  margin-bottom: 8px;
+}
+
+.heritage-source {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: none;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.stat-block {
+  padding: 22px 18px;
+  background: var(--field-deep);
+  color: #fff;
+}
+
+.stat-block strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--grain-soft);
+  margin-bottom: 8px;
+}
+
+.stat-block span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+}
+
+.source-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.source-list a {
+  font-weight: 600;
+  color: var(--field);
+}
+
+.archive-reco {
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero-hi-sub {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-hi);
+  font-size: 0.45em;
+  font-weight: 600;
+  color: var(--grain-soft);
+  letter-spacing: 0;
+}
+
+@media (max-width: 960px) {
+  .heritage-card,
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
 .footer-contact,
 .footer-phones {
   margin-top: 10px;
