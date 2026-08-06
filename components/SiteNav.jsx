@@ -44,7 +44,8 @@ export default function SiteNav() {
 
         <nav id="site-menu" className="nav-links" aria-label="Primary">
           {nav.map((item) => {
-            const active = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+            const active =
+              item.href === '/' ? pathname === '/' : pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <Link key={item.href} href={item.href} className={active ? 'is-active' : ''}>
                 {item.label}

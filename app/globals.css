@@ -1123,6 +1123,260 @@ h2 {
   .hero-scroll { display: none; }
 }
 
+.hero-micro {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  margin: -8px 0 22px;
+  max-width: 48ch;
+}
+
+.proof-band {
+  background: var(--field-deep);
+  color: rgba(255, 255, 255, 0.88);
+  padding: 18px 0;
+}
+
+.proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+}
+
+.proof-row span {
+  border-left: 2px solid var(--grain);
+  padding-left: 12px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  color: var(--field-deep);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.chip-row.large .chip {
+  min-height: 48px;
+  padding: 0 18px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 560;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.contact-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--stroke);
+}
+
+.contact-strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  color: var(--field-deep);
+  font-weight: 560;
+  line-height: 1.25;
+}
+
+.stack-phones {
+  display: grid;
+  gap: 6px;
+}
+
+.assignment-list {
+  display: grid;
+  gap: 0;
+}
+
+.assignment-list li {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--stroke);
+  align-items: baseline;
+}
+
+.assign-when {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sap);
+}
+
+.assign-what {
+  color: var(--field-deep);
+  font-size: 1.02rem;
+}
+
+.award-grid,
+.initiative-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.award-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  overflow: hidden;
+}
+
+.award-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.award-card h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.initiative-card {
+  padding: 24px 22px;
+  background: #fff;
+  border-top: 3px solid var(--grain);
+  border: 1px solid var(--stroke);
+  border-top-width: 3px;
+  border-top-color: var(--grain);
+}
+
+.initiative-card h2 {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.section-photo {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 1px solid var(--stroke);
+}
+
+.reverse-split {
+  direction: rtl;
+}
+.reverse-split > * {
+  direction: ltr;
+}
+
+.issue-copy-list {
+  display: grid;
+  gap: 14px;
+  max-width: 68ch;
+}
+
+.issue-copy-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 1.08rem;
+  color: #2f3832;
+}
+
+.issue-copy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 2px;
+  background: var(--grain);
+}
+
+.quote-panel {
+  padding: 28px 24px;
+  background: var(--field-deep);
+  color: #fff;
+}
+
+.quote-bn {
+  font-family: var(--font-bn);
+  font-size: 1.25rem;
+  color: var(--grain-soft);
+  margin-bottom: 12px;
+  max-width: 28ch;
+}
+
+.quote-en {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 36ch;
+}
+
+.media-static {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  align-items: baseline;
+}
+
+.media-meta {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.footer-contact,
+.footer-phones {
+  margin-top: 10px;
+  font-size: 0.92rem;
+}
+
+.footer-contact a,
+.footer-phones a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-panel a {
+  color: var(--grain-soft);
+}
+
+.section-deck {
+  color: var(--muted);
+  max-width: 58ch;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 960px) {
+  .contact-grid,
+  .award-card {
+    grid-template-columns: 1fr;
+  }
+  .assignment-list li,
+  .media-static {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .reverse-split {
+    direction: ltr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-photo,

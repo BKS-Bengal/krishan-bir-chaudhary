@@ -1,17 +1,38 @@
 import Reveal from '../../components/Reveal';
-import { featuredMedia, orgs, profile, social } from '../../lib/data';
+import { contact, featuredMedia, orgs, profile, social } from '../../lib/data';
 
 export const metadata = {
-  title: 'Connect',
-  description: `Connect with ${profile.name} through public and organisational channels.`,
+  title: 'Contact',
+  description: `Contact ${profile.name} — email, phone, office and residence.`,
 };
 
 export default function ContactPage() {
-  const all = [
+  const directory = [
+    {
+      id: 'email',
+      group: 'Direct',
+      label: 'Email',
+      handle: contact.email,
+      href: `mailto:${contact.email}`,
+    },
+    ...contact.phones.map((p) => ({
+      id: p,
+      group: 'Direct',
+      label: 'Mobile',
+      handle: `+91 ${p}`,
+      href: `tel:+91${p}`,
+    })),
+    {
+      id: 'web',
+      group: 'Direct',
+      label: 'Website',
+      handle: contact.webLabel,
+      href: contact.web,
+    },
     ...social.map((s) => ({ ...s, group: 'Social' })),
     ...orgs.map((o) => ({
       id: o.href,
-      label: 'BKS West Bengal',
+      label: o.label,
       handle: o.detail,
       href: o.href,
       group: 'Organisation',
@@ -28,21 +49,84 @@ export default function ContactPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: "url('/photos/field-01.jpg')" }} />
+        <div
+          className="page-hero-bg"
+          style={{ backgroundImage: "url('/photos/events/portrait-speaking.png')" }}
+        />
         <div className="wrap page-hero-copy">
-          <p className="kicker light">Connect</p>
-          <h1>Every public link in one directory</h1>
+          <p className="kicker light">Contact</p>
+          <h1>Write, call, or follow</h1>
           <p className="page-lead">
-            Follow {profile.name} across social platforms, organisation pages, and published media.
+            Official contact for {profile.name} — press, invitations, and farmer organisation
+            correspondence.
           </p>
         </div>
       </section>
 
       <section className="band">
+        <div className="wrap contact-grid">
+          <Reveal className="contact-card">
+            <p className="kicker">Email</p>
+            <a className="contact-strong" href={`mailto:${contact.email}`}>
+              {contact.email}
+            </a>
+          </Reveal>
+          <Reveal className="contact-card" delay={60}>
+            <p className="kicker">Mobile</p>
+            <div className="contact-strong stack-phones">
+              {contact.phones.map((p) => (
+                <a key={p} href={`tel:+91${p}`}>
+                  +91 {p}
+                </a>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal className="contact-card" delay={120}>
+            <p className="kicker">Web</p>
+            <a
+              className="contact-strong"
+              href={contact.web}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {contact.webLabel}
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="band muted-band">
+        <div className="wrap split">
+          <Reveal>
+            <p className="kicker">Office</p>
+            <h2>New Delhi</h2>
+            <p>{contact.office}</p>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="kicker">Residence</p>
+            <h2>Ghaziabad</h2>
+            <p>{contact.residence}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="band">
         <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">Directory</p>
+            <h2>All public channels</h2>
+          </Reveal>
           <div className="directory">
-            {all.map((item, i) => (
-              <Reveal key={item.id} as="a" className="directory-row" delay={(i % 6) * 40} href={item.href} target="_blank" rel="noopener noreferrer">
+            {directory.map((item, i) => (
+              <Reveal
+                key={item.id}
+                as="a"
+                className="directory-row"
+                delay={(i % 6) * 40}
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
                 <span className="dir-group">{item.group}</span>
                 <span className="dir-label">{item.label}</span>
                 <span className="dir-handle">{item.handle}</span>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { orgs, profile, social } from '../lib/data';
+import { contact, orgs, profile, social } from '../lib/data';
 
 export default function SiteFooter() {
   return (
@@ -9,6 +9,21 @@ export default function SiteFooter() {
           <p className="footer-name">{profile.name}</p>
           <p className="footer-bn">{profile.nameBn}</p>
           <p className="footer-tag">{profile.shortTitle}</p>
+          <p className="footer-contact">
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            <span aria-hidden="true"> · </span>
+            <a href={contact.web} target="_blank" rel="noopener noreferrer">
+              {contact.webLabel}
+            </a>
+          </p>
+          <p className="footer-phones">
+            {contact.phones.map((p, i) => (
+              <span key={p}>
+                {i > 0 ? ' / ' : null}
+                <a href={`tel:+91${p}`}>+91 {p}</a>
+              </span>
+            ))}
+          </p>
         </div>
         <div className="footer-cols">
           <div>
@@ -29,15 +44,15 @@ export default function SiteFooter() {
               {orgs.map((o) => (
                 <li key={o.href}>
                   <a href={o.href} target="_blank" rel="noopener noreferrer">
-                    BKS West Bengal
+                    {o.label.includes('West Bengal') ? 'BKS West Bengal' : o.label}
                   </a>
                 </li>
               ))}
               <li>
-                <Link href="/media">All media links</Link>
+                <Link href="/media">Media</Link>
               </li>
               <li>
-                <Link href="/contact">Connect</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </div>
@@ -45,8 +60,7 @@ export default function SiteFooter() {
       </div>
       <div className="wrap footer-bottom">
         <p>
-          Portfolio site for {profile.name}. Distinguish Bharatiya Krishak Samaj from similarly
-          named organisations.
+          {profile.name} · {profile.qualifications} · Bharatiya Krishak Samaj
         </p>
       </div>
     </footer>
