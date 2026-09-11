@@ -1,5 +1,12 @@
 import Reveal from '../../components/Reveal';
-import { featuredMedia, press, profile, social, tvChannels } from '../../lib/data';
+import {
+  featuredMedia,
+  press,
+  profile,
+  seedBill2025,
+  social,
+  tvChannels,
+} from '../../lib/data';
 
 export const metadata = {
   title: 'Media',
@@ -21,6 +28,24 @@ export default function MediaPage() {
             Editor of Kisan Ki Awaaz · Author of Development Misplaced (Penguin, 2014) · National TV
             &amp; international forums.
           </p>
+        </div>
+      </section>
+
+      <section className="band" id={seedBill2025.id}>
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">{seedBill2025.kicker}</p>
+            <h2>{seedBill2025.title}</h2>
+            <p className="lede">{seedBill2025.summary}</p>
+          </Reveal>
+          <div className="gallery-grid">
+            {seedBill2025.photos.map((item, i) => (
+              <Reveal key={item.src} as="figure" className="gallery-card" delay={(i % 3) * 70}>
+                <img src={item.src} alt={item.alt} />
+                <figcaption>{item.caption}</figcaption>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
