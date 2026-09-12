@@ -9,10 +9,13 @@ export const metadata = {
 export default function AwardsPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" data-hero="awards" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/shikhar-award.png')" }}
+          style={{
+            backgroundImage: "url('/photos/events/shikhar-award.png')",
+            '--hero-focus': 'center 14%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Awards</p>

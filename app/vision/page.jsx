@@ -10,8 +10,14 @@ export const metadata = {
 export default function VisionPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: "url('/photos/field-01.jpg')" }} />
+      <section className="page-hero" data-hero="vision">
+        <div
+          className="page-hero-bg"
+          style={{
+            backgroundImage: "url('/photos/field-01.jpg')",
+            '--hero-focus': 'center 42%',
+          }}
+        />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Vision</p>
           <h1>{vision.statement}</h1>

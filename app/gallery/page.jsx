@@ -63,10 +63,13 @@ function InvitationNote({ copy, lang }) {
 export default function GalleryPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" data-hero="gallery" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/mewat-haryana/stage-dignitaries.jpg')" }}
+          style={{
+            backgroundImage: "url('/photos/events/mewat-haryana/stage-dignitaries.jpg')",
+            '--hero-focus': 'center 38%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Gallery</p>

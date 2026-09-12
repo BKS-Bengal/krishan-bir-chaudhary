@@ -5,11 +5,20 @@ export default function PageHero({
   title,
   lead,
   image = '/photos/events/portrait-speaking.png',
+  focus = 'center 28%',
+  heroKey,
   children,
 }) {
   return (
-    <section className="page-hero">
-      <div className="page-hero-bg" style={{ backgroundImage: `url('${image}')` }} aria-hidden="true" />
+    <section className="page-hero" data-hero={heroKey || undefined}>
+      <div
+        className="page-hero-bg"
+        style={{
+          backgroundImage: `url('${image}')`,
+          '--hero-focus': focus,
+        }}
+        aria-hidden="true"
+      />
       <div className="wrap page-hero-copy">
         {kicker ? <p className="kicker light">{kicker}</p> : null}
         <h1>{title}</h1>

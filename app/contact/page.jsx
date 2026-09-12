@@ -48,10 +48,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" data-hero="contact" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/portrait-speaking.png')" }}
+          style={{
+            backgroundImage: "url('/photos/events/shikhar-award.png')",
+            '--hero-focus': 'center 14%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Contact</p>
