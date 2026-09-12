@@ -15,10 +15,13 @@ export default function BksPage() {
         ])}
       />
 
-      <section className="page-hero">
+      <section className="page-hero" data-hero="bks" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/lamp-lighting.png')" }}
+          style={{
+            backgroundImage: "url('/photos/events/lamp-lighting.png')",
+            '--hero-focus': 'center 26%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Heritage &amp; mission</p>

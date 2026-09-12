@@ -9,8 +9,14 @@ export const metadata = {
 export default function InitiativesPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: "url('/photos/hands-01.jpg')" }} />
+      <section className="page-hero" data-hero="initiatives">
+        <div
+          className="page-hero-bg"
+          style={{
+            backgroundImage: "url('/photos/hands-01.jpg')",
+            '--hero-focus': 'center 45%',
+          }}
+        />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Initiatives</p>
           <h1>Where advocacy becomes action</h1>

@@ -16,10 +16,13 @@ export const metadata = {
 export default function MediaPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" data-hero="media" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/shikhar-panel.png')" }}
+          style={{
+            backgroundImage: "url('/photos/events/shikhar-panel.png')",
+            '--hero-focus': 'center 30%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Media</p>

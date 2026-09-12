@@ -10,10 +10,13 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" data-hero="about" data-fit="top">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('/photos/events/portrait-speaking.png')" }}
+          style={{
+            backgroundImage: "url('/photos/04-session.jpg')",
+            '--hero-focus': '38% 36%',
+          }}
         />
         <div className="wrap page-hero-copy">
           <p className="kicker light">About</p>
@@ -27,12 +30,20 @@ export default function AboutPage() {
       <section className="band">
         <div className="wrap about-photo-row">
           <Reveal as="figure" className="about-shot">
-            <img src="/photos/events/gadkari-meeting.png" alt="With Union Minister Nitin Gadkari" />
+            <img
+              src="/photos/events/gadkari-meeting.png"
+              alt="With Union Minister Nitin Gadkari"
+              style={{ objectPosition: 'center 12%' }}
+            />
             <figcaption>With Nitin Gadkari</figcaption>
           </Reveal>
           <Reveal as="figure" className="about-shot" delay={80}>
-            <img src="/photos/events/shikhar-award.png" alt="At Shikhar Samman ceremony" />
-            <figcaption>Public recognition on national agri platforms</figcaption>
+            <img
+              src="/photos/events/portrait-speaking.png"
+              alt="Speaking at a public agricultural forum"
+              style={{ objectPosition: 'center 12%' }}
+            />
+            <figcaption>Addressing a public forum</figcaption>
           </Reveal>
         </div>
         <div className="wrap narrow">

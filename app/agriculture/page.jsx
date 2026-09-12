@@ -10,8 +10,14 @@ export const metadata = {
 export default function AgriculturePage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: "url('/photos/crops-01.jpg')" }} />
+      <section className="page-hero" data-hero="agriculture">
+        <div
+          className="page-hero-bg"
+          style={{
+            backgroundImage: "url('/photos/crops-01.jpg')",
+            '--hero-focus': 'center 40%',
+          }}
+        />
         <div className="wrap page-hero-copy">
           <p className="kicker light">Agriculture</p>
           <h1>Heritage, sustainability, and disciplined innovation</h1>

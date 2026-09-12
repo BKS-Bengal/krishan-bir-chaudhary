@@ -17,7 +17,10 @@ export default function HomePage() {
         <div className="hero-layers" aria-hidden="true">
           <div
             className="hero-photo"
-            style={{ backgroundImage: "url('/photos/events/portrait-speaking.png')" }}
+            style={{
+              backgroundImage: "url('/photos/events/portrait-speaking.png')",
+              '--hero-focus': 'center 12%',
+            }}
           />
           <div className="hero-veil" />
           <div className="hero-grain" />
