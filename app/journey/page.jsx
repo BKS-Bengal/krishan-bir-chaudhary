@@ -1,9 +1,10 @@
 import Reveal from '../../components/Reveal';
+import ParliamentaryRecord from '../../components/ParliamentaryRecord';
 import { assignments, journey, profile } from '../../lib/data';
 
 export const metadata = {
   title: 'Journey',
-  description: `Career timeline and special assignments of ${profile.name}.`,
+  description: `Career timeline, parliamentary record on The Seeds Bill, 2004, and special assignments of ${profile.name}.`,
 };
 
 export default function JourneyPage() {
@@ -44,6 +45,8 @@ export default function JourneyPage() {
           </ol>
         </div>
       </section>
+
+      <ParliamentaryRecord />
 
       <section className="band muted-band">
         <div className="wrap">

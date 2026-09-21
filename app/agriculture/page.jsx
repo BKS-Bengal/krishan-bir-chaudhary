@@ -58,6 +58,9 @@ export default function AgriculturePage() {
               illegal patent on an Indian wheat variety (filed with Greenpeace), the through-line is
               clear: Indian germplasm and farmers’ seed rights are not for capture.
             </p>
+            <Link className="text-link" href="/journey#seeds-bill-2004">
+              Parliamentary record — The Seeds Bill, 2004
+            </Link>
           </Reveal>
         </div>
       </section>
