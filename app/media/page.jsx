@@ -86,17 +86,24 @@ export default function MediaPage() {
             <h2>{kisanKiAwaazArchive.title}</h2>
             <p className="lede">{kisanKiAwaazArchive.summary}</p>
           </Reveal>
-          <ul className="media-list">
+          <ul className="magazine-archive-grid">
             {kisanKiAwaazArchive.issues.map((item, i) => (
-              <Reveal key={item.href} as="li" delay={i * 40}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer">
-                  <span className="media-type">{item.type}</span>
-                  <span className="media-title">
-                    {item.title}
-                    <span className="media-meta">
-                      {' '}
-                      — {item.outlet}
-                    </span>
+              <Reveal key={item.href} as="li" delay={i * 50}>
+                <a
+                  className="magazine-issue-card"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${item.title} issue PDF`}
+                >
+                  <span className="magazine-issue-thumb">
+                    <img src={item.thumb} alt={item.thumbAlt} loading="lazy" />
+                  </span>
+                  <span className="magazine-issue-copy">
+                    <span className="media-type">{item.type}</span>
+                    <span className="media-title">{item.title}</span>
+                    <span className="media-meta">{item.outlet}</span>
+                    <span className="magazine-issue-cta">Open PDF</span>
                   </span>
                 </a>
               </Reveal>
