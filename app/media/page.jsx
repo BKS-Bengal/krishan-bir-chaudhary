@@ -1,6 +1,7 @@
 import Reveal from '../../components/Reveal';
 import {
   featuredMedia,
+  kisanKiAwaazArchive,
   press,
   profile,
   seedBill2025,
@@ -10,7 +11,7 @@ import {
 
 export const metadata = {
   title: 'Media',
-  description: `Press, publications, and channels for ${profile.name}.`,
+  description: `Press, publications, Kisan Ki Awaaz magazine archive, and channels for ${profile.name}.`,
 };
 
 export default function MediaPage() {
@@ -78,7 +79,33 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="band muted-band">
+      <section className="band muted-band" id={kisanKiAwaazArchive.id}>
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">{kisanKiAwaazArchive.kicker}</p>
+            <h2>{kisanKiAwaazArchive.title}</h2>
+            <p className="lede">{kisanKiAwaazArchive.summary}</p>
+          </Reveal>
+          <ul className="media-list">
+            {kisanKiAwaazArchive.issues.map((item, i) => (
+              <Reveal key={item.href} as="li" delay={i * 40}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <span className="media-type">{item.type}</span>
+                  <span className="media-title">
+                    {item.title}
+                    <span className="media-meta">
+                      {' '}
+                      — {item.outlet}
+                    </span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="band">
         <div className="wrap">
           <Reveal className="section-head">
             <p className="kicker">Publications &amp; coverage</p>
