@@ -3,6 +3,7 @@ import {
   featuredMedia,
   kisanKiAwaazArchive,
   press,
+  pressClippings,
   profile,
   seedBill2025,
   social,
@@ -11,7 +12,7 @@ import {
 
 export const metadata = {
   title: 'Media',
-  description: `Press, publications, Kisan Ki Awaaz magazine archive, and channels for ${profile.name}.`,
+  description: `Press clippings, publications, Kisan Ki Awaaz magazine archive, and channels for ${profile.name}.`,
 };
 
 export default function MediaPage() {
@@ -79,7 +80,52 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="band muted-band" id={kisanKiAwaazArchive.id}>
+      <section className="band muted-band" id={pressClippings.id}>
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">{pressClippings.kicker}</p>
+            <h2>{pressClippings.title}</h2>
+            <p className="lede">{pressClippings.summary}</p>
+          </Reveal>
+          <ul className="press-clippings-grid">
+            {pressClippings.items.map((item, i) => (
+              <Reveal key={item.href} as="li" delay={i * 50}>
+                <figure className="press-clipping-card">
+                  <a
+                    className="press-clipping-thumb"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open full ${item.outlet} clipping`}
+                  >
+                    <img src={item.thumb} alt={item.thumbAlt} loading="lazy" />
+                  </a>
+                  <figcaption className="press-clipping-copy">
+                    <span className="media-type">{item.type}</span>
+                    <h3 className="media-title">{item.title}</h3>
+                    {item.subtitle ? <p className="press-clipping-subtitle">{item.subtitle}</p> : null}
+                    <p className="media-meta">
+                      {item.outlet}
+                      {item.when ? ` · ${item.when}` : ''}
+                    </p>
+                    <p className="press-clipping-caption">{item.caption}</p>
+                    <a
+                      className="magazine-issue-cta"
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View full page
+                    </a>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="band" id={kisanKiAwaazArchive.id}>
         <div className="wrap">
           <Reveal className="section-head">
             <p className="kicker">{kisanKiAwaazArchive.kicker}</p>
@@ -112,7 +158,7 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="band">
+      <section className="band muted-band">
         <div className="wrap">
           <Reveal className="section-head">
             <p className="kicker">Publications &amp; coverage</p>

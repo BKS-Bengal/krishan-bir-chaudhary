@@ -1121,6 +1121,71 @@ h2 {
 
 .media-list a:hover { padding-left: 8px; }
 
+.press-clippings-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 28px);
+}
+
+.press-clipping-card {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid var(--stroke);
+}
+
+.press-clipping-thumb {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  background: #f4f1ea;
+  aspect-ratio: 3 / 4;
+}
+
+.press-clipping-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+
+.press-clipping-card:hover .press-clipping-thumb img {
+  transform: scale(1.02);
+}
+
+.press-clipping-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.press-clipping-copy .media-title {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.press-clipping-subtitle {
+  margin: 0;
+  color: var(--field-deep);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.press-clipping-caption {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 58ch;
+}
+
 .magazine-archive-grid {
   list-style: none;
   margin: 0;
@@ -1423,6 +1488,7 @@ h2 {
     gap: 6px;
   }
 
+  .press-clippings-grid,
   .magazine-archive-grid {
     grid-template-columns: 1fr;
   }
