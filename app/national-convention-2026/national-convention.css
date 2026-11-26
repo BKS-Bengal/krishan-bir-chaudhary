@@ -1,0 +1,479 @@
+/* Scoped styles for Krishan Bir Chaudhary National Convention 2026 invitation */
+
+.nc-page {
+  --nc-ink: #121714;
+  --nc-muted: #5a655c;
+  --nc-paper: #f4f6f2;
+  --nc-mist: #e7ece6;
+  --nc-field: #1f4d38;
+  --nc-deep: #0b1c14;
+  --nc-sap: #2f6b4a;
+  --nc-grain: #b89b4c;
+  --nc-grain-soft: #e8d9a8;
+  background:
+    radial-gradient(ellipse 70% 45% at 8% 0%, rgba(184, 155, 76, 0.16), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 100% 8%, rgba(31, 77, 56, 0.12), transparent 50%),
+    linear-gradient(180deg, #eef2ec 0%, var(--nc-paper) 35%, #e4ebe3 100%);
+  color: var(--nc-ink);
+  overflow-x: clip;
+}
+
+.nc-ribbon {
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--nc-deep), var(--nc-field) 60%, #274f3b);
+  color: #f4f6f2;
+  border-bottom: 1px solid rgba(184, 155, 76, 0.35);
+}
+
+.nc-ribbon-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  padding: 0.7rem 0;
+  animation: nc-marquee 28s linear infinite;
+}
+
+.nc-ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  white-space: nowrap;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.nc-ribbon-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--nc-grain-soft);
+}
+
+.nc-breadcrumb {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.2rem;
+}
+
+.nc-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--nc-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.nc-breadcrumb a {
+  color: var(--nc-field);
+  text-decoration: none;
+}
+
+.nc-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.nc-breadcrumb [aria-current='page'] {
+  color: var(--nc-ink);
+}
+
+.nc-hero {
+  position: relative;
+  padding: clamp(2rem, 5vw, 3.5rem) 0 3rem;
+}
+
+.nc-motif {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none'%3E%3Cpath d='M80 18c2 26 2 50 0 76' stroke='%231f4d38' stroke-width='3'/%3E%3Cellipse cx='80' cy='26' rx='9' ry='16' fill='%23b89b4c'/%3E%3Cellipse cx='60' cy='48' rx='9' ry='16' fill='%23b89b4c' transform='rotate(-28 60 48)'/%3E%3Cellipse cx='100' cy='48' rx='9' ry='16' fill='%23b89b4c' transform='rotate(28 100 48)'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nc-motif-tl {
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.nc-motif-br {
+  right: 0.75rem;
+  bottom: 1.5rem;
+  transform: rotate(150deg);
+}
+
+.nc-hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nc-kicker {
+  margin: 0 0 0.7rem;
+  color: var(--nc-grain);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nc-hero h1 {
+  margin: 0;
+  max-width: 16ch;
+  color: var(--nc-deep);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.nc-hero-lead {
+  margin: 1rem 0 0;
+  max-width: 46ch;
+  color: var(--nc-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.nc-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+
+.nc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--nc-field);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nc-badge-date {
+  border-color: rgba(184, 155, 76, 0.55);
+  background: linear-gradient(135deg, #fff8e4, var(--nc-grain-soft));
+  animation: nc-date-glow 2.8s ease-in-out infinite;
+}
+
+.nc-badge-time {
+  background: var(--nc-field);
+  border-color: var(--nc-field);
+  color: #f4f6f2;
+}
+
+.nc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+/* .btn-line globally assumes a dark hero; override for this light invitation page. */
+.nc-page .nc-actions .btn-line {
+  border: 1.5px solid rgba(31, 77, 56, 0.4);
+  color: var(--nc-field);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.nc-page .nc-actions .btn-line:hover {
+  border-color: var(--nc-field);
+  background: rgba(231, 236, 230, 0.9);
+}
+
+.nc-poster-frame {
+  margin: 0;
+  padding: 0.85rem;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(232, 217, 168, 0.35));
+  border: 1px solid rgba(18, 23, 20, 0.12);
+  box-shadow: 0 18px 40px rgba(11, 28, 20, 0.12);
+  animation: nc-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nc-poster-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f7f9f5;
+}
+
+.nc-section {
+  padding: 3.2rem 0;
+}
+
+.nc-section-alt {
+  background: rgba(231, 236, 230, 0.55);
+  border-block: 1px solid rgba(18, 23, 20, 0.08);
+}
+
+.nc-section-head {
+  max-width: 54ch;
+  margin-bottom: 1.6rem;
+}
+
+.nc-section-head h2 {
+  margin: 0.3rem 0 0.55rem;
+  color: var(--nc-deep);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.2;
+}
+
+.nc-section-head p {
+  margin: 0;
+  color: var(--nc-muted);
+  line-height: 1.6;
+}
+
+.nc-lead-grid,
+.nc-delegate-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nc-card {
+  padding: 1.2rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(11, 28, 20, 0.1);
+}
+
+.nc-card .kicker {
+  margin-bottom: 0.4rem;
+}
+
+.nc-card h3 {
+  margin: 0;
+  color: var(--nc-field);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.nc-card p {
+  margin: 0.4rem 0 0;
+  color: var(--nc-muted);
+  line-height: 1.55;
+}
+
+.nc-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid rgba(31, 77, 56, 0.2);
+}
+
+.nc-timeline li {
+  position: relative;
+  padding: 1rem 0 1.1rem 1.35rem;
+}
+
+.nc-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.55rem;
+  top: 1.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--nc-grain);
+  border: 3px solid var(--nc-paper);
+  box-shadow: 0 0 0 2px rgba(184, 155, 76, 0.35);
+  animation: nc-node-pulse 2.6s ease-in-out infinite;
+}
+
+.nc-timeline time {
+  display: block;
+  color: var(--nc-field);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.nc-timeline strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+}
+
+.nc-timeline p {
+  margin: 0.3rem 0 0;
+  color: var(--nc-muted);
+  font-size: 0.92rem;
+}
+
+.nc-states {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.nc-state {
+  display: grid;
+  place-items: center;
+  min-height: 70px;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--nc-field);
+  background: linear-gradient(160deg, #fff, rgba(231, 236, 230, 0.85));
+  border: 1px solid rgba(31, 77, 56, 0.14);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.nc-state:hover {
+  transform: translateY(-2px);
+  border-color: rgba(184, 155, 76, 0.55);
+}
+
+.nc-venue {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.45rem;
+  background: linear-gradient(135deg, var(--nc-deep), var(--nc-field));
+  color: #f4f6f2;
+  box-shadow: 0 16px 34px rgba(11, 28, 20, 0.2);
+}
+
+.nc-venue strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.25;
+}
+
+.nc-venue span {
+  color: rgba(244, 246, 242, 0.86);
+  line-height: 1.5;
+}
+
+.nc-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--nc-muted);
+  line-height: 1.55;
+}
+
+.nc-list li + li {
+  margin-top: 0.35rem;
+}
+
+.nc-poster-block {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.nc-poster-block figcaption {
+  margin: 0.7rem 0 0;
+  color: var(--nc-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.nc-close {
+  position: relative;
+  text-align: center;
+  padding: 3.4rem 0 4.2rem;
+}
+
+.nc-close h2 {
+  margin: 0;
+  color: var(--nc-deep);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+}
+
+.nc-close p {
+  margin: 0.75rem auto 1.35rem;
+  max-width: 48ch;
+  color: var(--nc-muted);
+  line-height: 1.6;
+}
+
+@keyframes nc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes nc-date-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(184, 155, 76, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(184, 155, 76, 0);
+  }
+}
+
+@keyframes nc-node-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(184, 155, 76, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(184, 155, 76, 0.08);
+  }
+}
+
+@keyframes nc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .nc-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.4rem;
+  }
+
+  .nc-lead-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nc-states {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .nc-delegate-grid,
+  .nc-poster-block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-ribbon-track,
+  .nc-badge-date,
+  .nc-timeline li::before,
+  .nc-poster-frame {
+    animation: none;
+  }
+
+  .nc-card:hover,
+  .nc-state:hover {
+    transform: none;
+  }
+}
