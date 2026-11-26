@@ -1,5 +1,5 @@
 import Reveal from '../../components/Reveal';
-import { gallery, mewatHaryana, profile, social } from '../../lib/data';
+import { gallery, mewatHaryana, nationalConvention2026, profile, social } from '../../lib/data';
 
 export const metadata = {
   title: 'Gallery',
@@ -31,21 +31,23 @@ function InvitationNote({ copy, lang }) {
           </p>
         ))}
       </div>
-      <div className="invite-people">
-        <p className="invite-label">{lang === 'hi' ? 'विशिष्ट अतिथि' : 'Special Guests'}</p>
-        <ol>
-          {copy.specialGuests.map((guest) => (
-            <li key={guest.name}>
-              <span className="invite-name">{guest.name}</span>
-              {guest.lines.map((line) => (
-                <span key={line} className="invite-role">
-                  {line}
-                </span>
-              ))}
-            </li>
-          ))}
-        </ol>
-      </div>
+      {copy.specialGuests?.length ? (
+        <div className="invite-people">
+          <p className="invite-label">{lang === 'hi' ? 'विशिष्ट अतिथि' : 'Special Guests'}</p>
+          <ol>
+            {copy.specialGuests.map((guest) => (
+              <li key={guest.name}>
+                <span className="invite-name">{guest.name}</span>
+                {guest.lines.map((line) => (
+                  <span key={line} className="invite-role">
+                    {line}
+                  </span>
+                ))}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
       <div className="invite-people">
         <p className="invite-label">{lang === 'hi' ? 'आयोजक' : 'Organizer'}</p>
         <p className="invite-name">{copy.organizer.name}</p>
@@ -74,6 +76,39 @@ export default function GalleryPage() {
         <div className="wrap page-hero-copy">
           <p className="kicker light">Gallery</p>
           <h1>Public moments and agrarian context</h1>
+        </div>
+      </section>
+
+      <section className="band invite-band" id={nationalConvention2026.id} tabIndex={-1}>
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">{nationalConvention2026.kicker}</p>
+            <h2>{nationalConvention2026.title}</h2>
+            <p className="lede">{nationalConvention2026.summary}</p>
+          </Reveal>
+          <aside className="convention-special-note" aria-label={nationalConvention2026.specialNote.label}>
+            <p className="kicker">{nationalConvention2026.specialNote.label}</p>
+            <p>{nationalConvention2026.specialNote.text}</p>
+            <p lang="hi">{nationalConvention2026.specialNote.textHi}</p>
+          </aside>
+          <Reveal as="figure" className="invite-banner" delay={40}>
+            <img
+              src={nationalConvention2026.invitationBanner}
+              alt={nationalConvention2026.invitationAlt}
+            />
+            <figcaption className="invite-flyer-captions">
+              <span lang="en">{nationalConvention2026.flyerCaption.en}</span>
+              <span lang="hi">{nationalConvention2026.flyerCaption.hi}</span>
+            </figcaption>
+          </Reveal>
+          <div className="invite-notes">
+            <Reveal delay={60}>
+              <InvitationNote copy={nationalConvention2026.invitation.hi} lang="hi" />
+            </Reveal>
+            <Reveal delay={100}>
+              <InvitationNote copy={nationalConvention2026.invitation.en} lang="en" />
+            </Reveal>
+          </div>
         </div>
       </section>
 

@@ -773,6 +773,134 @@ h2 {
   letter-spacing: 0.04em;
   backdrop-filter: blur(8px);
   animation: invite-tab-glow 1.6s ease-in-out infinite;
+  max-width: 100%;
+}
+
+.convention-hook-band {
+  padding-top: clamp(28px, 5vw, 48px);
+  padding-bottom: clamp(28px, 5vw, 48px);
+  background:
+    linear-gradient(180deg, rgba(11, 28, 20, 0.04), transparent 40%),
+    rgba(231, 236, 230, 0.55);
+}
+
+.convention-hook {
+  display: grid;
+  gap: 22px;
+  align-items: start;
+  padding: clamp(18px, 3vw, 28px);
+  background: #fff;
+  border: 1px solid var(--stroke);
+}
+
+.convention-hook-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  background: #f7f9f5;
+}
+
+.convention-hook-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.convention-hook-media figcaption,
+.invite-flyer-captions {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.convention-hook-copy {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.convention-hook-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--sap);
+  font-weight: 600;
+}
+
+.convention-hook-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.2rem;
+  padding: 4px 10px;
+  background: #b42318;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: invite-dot-blink 1.2s ease-in-out infinite;
+}
+
+.convention-hook-live {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--sap);
+  box-shadow: 0 0 0 0 rgba(47, 107, 74, 0.45);
+  animation: invite-dot-blink 1.6s ease-in-out infinite;
+}
+
+.convention-special-note {
+  margin: 4px 0 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--grain);
+  background: rgba(231, 236, 230, 0.65);
+}
+
+.convention-special-note .kicker {
+  margin-bottom: 8px;
+}
+
+.convention-special-note p {
+  margin: 0 0 8px;
+  max-width: 62ch;
+}
+
+.convention-special-note p:last-child {
+  margin-bottom: 0;
+}
+
+.broadcast-card {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--stroke);
+  background: #fff;
+}
+
+.broadcast-card-hi {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.broadcast-card-hi a {
+  color: var(--field-deep);
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .convention-hook {
+    grid-template-columns: minmax(240px, 0.95fr) minmax(0, 1.2fr);
+    gap: 28px;
+  }
 }
 
 .invite-blink-dot {
