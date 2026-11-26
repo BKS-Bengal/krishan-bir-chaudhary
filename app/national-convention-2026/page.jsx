@@ -181,7 +181,7 @@ export default function NationalConventionPage() {
           <ol className="nc-timeline">
             {conv.programme.map((item, index) => (
               <Reveal key={item.time} as="li" delay={index * 70}>
-                <time dateTime={item.time}>{item.time}</time>
+                <time dateTime={item.dateTime}>{item.time}</time>
                 <strong>{item.title}</strong>
                 {item.detail ? <p>{item.detail}</p> : null}
               </Reveal>
