@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="hero-content wrap">
           <Link
             className="invite-blink-tab animate-rise"
-            href={`/#${conv.invitationId}`}
+            href={conv.path}
           >
             <span className="invite-blink-dot" aria-hidden="true" />
             <span className="invite-blink-label">{conv.homeHook.badge}</span>
@@ -50,7 +50,7 @@ export default function HomePage() {
             {profile.shortTitle} · {profile.qualifications}
           </p>
           <div className="hero-actions animate-rise delay-4">
-            <Link className="btn btn-solid" href={`/#${conv.invitationId}`}>
+            <Link className="btn btn-solid" href={conv.path}>
               {conv.homeHook.action}
             </Link>
             <Link className="btn btn-line" href="/journey">
@@ -99,7 +99,7 @@ export default function HomePage() {
                 <p>{conv.specialNote.text}</p>
                 <p lang="hi">{conv.specialNote.textHi}</p>
               </aside>
-              <Link className="text-link" href={`/gallery#${conv.id}`}>
+              <Link className="text-link" href={conv.path}>
                 Full invitation details
               </Link>
             </div>

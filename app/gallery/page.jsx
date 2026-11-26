@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Reveal from '../../components/Reveal';
 import { gallery, mewatHaryana, nationalConvention2026, profile, social } from '../../lib/data';
 
@@ -22,15 +23,28 @@ function InvitationNote({ copy, lang }) {
           <strong>{lang === 'hi' ? 'स्थान' : 'Venue'}:</strong> {copy.venue}
         </li>
       </ul>
-      <div className="invite-people">
-        <p className="invite-label">{lang === 'hi' ? 'मुख्य अतिथि' : 'Chief Guest'}</p>
-        <p className="invite-name">{copy.chiefGuest.name}</p>
-        {copy.chiefGuest.lines.map((line) => (
-          <p key={line} className="invite-role">
-            {line}
-          </p>
-        ))}
-      </div>
+      {copy.chiefGuest ? (
+        <div className="invite-people">
+          <p className="invite-label">{lang === 'hi' ? 'मुख्य अतिथि' : 'Chief Guest'}</p>
+          <p className="invite-name">{copy.chiefGuest.name}</p>
+          {copy.chiefGuest.lines.map((line) => (
+            <p key={line} className="invite-role">
+              {line}
+            </p>
+          ))}
+        </div>
+      ) : null}
+      {copy.presiding ? (
+        <div className="invite-people">
+          <p className="invite-label">{lang === 'hi' ? 'अध्यक्षता' : 'Presiding Authority'}</p>
+          <p className="invite-name">{copy.presiding.name}</p>
+          {copy.presiding.lines.map((line) => (
+            <p key={line} className="invite-role">
+              {line}
+            </p>
+          ))}
+        </div>
+      ) : null}
       {copy.specialGuests?.length ? (
         <div className="invite-people">
           <p className="invite-label">{lang === 'hi' ? 'विशिष्ट अतिथि' : 'Special Guests'}</p>
@@ -100,6 +114,11 @@ export default function GalleryPage() {
               <span lang="en">{nationalConvention2026.flyerCaption.en}</span>
               <span lang="hi">{nationalConvention2026.flyerCaption.hi}</span>
             </figcaption>
+          </Reveal>
+          <Reveal delay={60}>
+            <Link className="btn btn-solid" href={nationalConvention2026.path}>
+              Open full invitation page
+            </Link>
           </Reveal>
           <div className="invite-notes">
             <Reveal delay={60}>
