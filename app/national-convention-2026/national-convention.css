@@ -178,6 +178,18 @@
   margin-top: 1.4rem;
 }
 
+/* .btn-line globally assumes a dark hero; override for this light invitation page. */
+.nc-page .nc-actions .btn-line {
+  border: 1.5px solid rgba(31, 77, 56, 0.4);
+  color: var(--nc-field);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.nc-page .nc-actions .btn-line:hover {
+  border-color: var(--nc-field);
+  background: rgba(231, 236, 230, 0.9);
+}
+
 .nc-poster-frame {
   margin: 0;
   padding: 0.85rem;
