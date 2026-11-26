@@ -2,16 +2,22 @@ import Link from 'next/link';
 import Reveal from '../../components/Reveal';
 import JsonLd from '../../components/JsonLd';
 import { nationalConvention2026 } from '../../lib/data';
-import { absoluteUrl, buildMetadata } from '../../lib/seo';
+import { absoluteUrl, breadcrumbJsonLd, buildMetadata } from '../../lib/seo';
 import './national-convention.css';
 
 const conv = nationalConvention2026;
+const homeAnnouncementHref = `/#${conv.invitationId}`;
 
 export const metadata = buildMetadata({
   title: conv.title,
   description: conv.page.metaDescription,
   path: conv.path,
 });
+
+const crumbs = breadcrumbJsonLd([
+  { name: 'Home', path: '/' },
+  { name: conv.page.breadcrumbCurrent, path: conv.path },
+]);
 
 const eventJsonLd = {
   '@context': 'https://schema.org',
@@ -46,7 +52,7 @@ export default function NationalConventionPage() {
 
   return (
     <div className="nc-page">
-      <JsonLd data={eventJsonLd} />
+      <JsonLd data={[eventJsonLd, crumbs]} />
 
       <div className="nc-ribbon" aria-label={page.ribbon}>
         <div className="nc-ribbon-track">
@@ -63,6 +69,20 @@ export default function NationalConventionPage() {
 
       <section className="nc-hero" aria-labelledby="nc-hero-title">
         <span className="nc-motif nc-motif-tl" aria-hidden="true" />
+        <div className="wrap">
+          <nav className="nc-breadcrumb" aria-label="Breadcrumb">
+            <Link className="text-link" href={homeAnnouncementHref}>
+              {page.backHome}
+            </Link>
+            <ol>
+              <li>
+                <Link href="/">{page.breadcrumbHome}</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page">{page.breadcrumbCurrent}</li>
+            </ol>
+          </nav>
+        </div>
         <div className="wrap nc-hero-grid">
           <div>
             <p className="nc-kicker">{conv.kicker}</p>
@@ -261,11 +281,11 @@ export default function NationalConventionPage() {
               dialogue in Maharashtra.
             </p>
             <div className="nc-actions" style={{ justifyContent: 'center' }}>
-              <Link className="btn btn-solid" href="/">
-                Back to home
+              <Link className="btn btn-solid" href={homeAnnouncementHref}>
+                {page.closeHome}
               </Link>
-              <Link className="btn btn-line" href="/gallery">
-                View gallery
+              <Link className="btn btn-line" href="/">
+                {page.breadcrumbHome}
               </Link>
             </div>
           </Reveal>

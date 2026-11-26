@@ -49,6 +49,38 @@
   background: var(--nc-grain-soft);
 }
 
+.nc-breadcrumb {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.2rem;
+}
+
+.nc-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--nc-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.nc-breadcrumb a {
+  color: var(--nc-field);
+  text-decoration: none;
+}
+
+.nc-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.nc-breadcrumb [aria-current='page'] {
+  color: var(--nc-ink);
+}
+
 .nc-hero {
   position: relative;
   padding: clamp(2rem, 5vw, 3.5rem) 0 3rem;

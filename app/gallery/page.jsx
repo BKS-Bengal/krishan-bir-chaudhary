@@ -117,7 +117,7 @@ export default function GalleryPage() {
           </Reveal>
           <Reveal delay={60}>
             <Link className="btn btn-solid" href={nationalConvention2026.path}>
-              Open full invitation page
+              {nationalConvention2026.homeHook.action}
             </Link>
           </Reveal>
           <div className="invite-notes">

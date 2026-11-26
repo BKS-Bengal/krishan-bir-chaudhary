@@ -34,12 +34,12 @@ export default function HomePage() {
         <div className="hero-content wrap">
           <Link
             className="invite-blink-tab animate-rise"
-            href={conv.path}
+            href={`/#${conv.invitationId}`}
           >
             <span className="invite-blink-dot" aria-hidden="true" />
             <span className="invite-blink-label">{conv.homeHook.badge}</span>
             <span className="invite-blink-meta">
-              {conv.kicker} · {conv.homeHook.action}
+              {conv.kicker} · Convention announcement
             </span>
           </Link>
           <p className="hero-kicker animate-rise delay-1">{profile.nameHi}</p>
@@ -50,8 +50,8 @@ export default function HomePage() {
             {profile.shortTitle} · {profile.qualifications}
           </p>
           <div className="hero-actions animate-rise delay-4">
-            <Link className="btn btn-solid" href={conv.path}>
-              {conv.homeHook.action}
+            <Link className="btn btn-solid" href={`/#${conv.invitationId}`}>
+              Convention announcement
             </Link>
             <Link className="btn btn-line" href="/journey">
               Explore the journey
@@ -99,8 +99,8 @@ export default function HomePage() {
                 <p>{conv.specialNote.text}</p>
                 <p lang="hi">{conv.specialNote.textHi}</p>
               </aside>
-              <Link className="text-link" href={conv.path}>
-                Full invitation details
+              <Link className="btn btn-solid" href={conv.path}>
+                {conv.homeHook.action}
               </Link>
             </div>
           </Reveal>
