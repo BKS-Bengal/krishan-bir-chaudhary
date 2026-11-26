@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal';
 import {
   contact,
   gallery,
+  nationalConvention2026,
   pillars,
   profile,
   proofRibbon,
@@ -11,6 +12,8 @@ import {
 } from '../lib/data';
 
 export default function HomePage() {
+  const conv = nationalConvention2026;
+
   return (
     <>
       <section className="hero">
@@ -29,7 +32,17 @@ export default function HomePage() {
         </div>
 
         <div className="hero-content wrap">
-          <p className="hero-kicker animate-rise">{profile.nameHi}</p>
+          <Link
+            className="invite-blink-tab animate-rise"
+            href={`/#${conv.invitationId}`}
+          >
+            <span className="invite-blink-dot" aria-hidden="true" />
+            <span className="invite-blink-label">{conv.homeHook.badge}</span>
+            <span className="invite-blink-meta">
+              {conv.kicker} · {conv.homeHook.action}
+            </span>
+          </Link>
+          <p className="hero-kicker animate-rise delay-1">{profile.nameHi}</p>
           <p className="hero-brand animate-rise delay-1">{profile.name}</p>
           <h1 className="animate-rise delay-2">{profile.brandLine}</h1>
           <p className="hero-lead animate-rise delay-3">{profile.tagline}</p>
@@ -37,11 +50,11 @@ export default function HomePage() {
             {profile.shortTitle} · {profile.qualifications}
           </p>
           <div className="hero-actions animate-rise delay-4">
-            <Link className="btn btn-solid" href="/journey">
-              Explore the journey
+            <Link className="btn btn-solid" href={`/#${conv.invitationId}`}>
+              {conv.homeHook.action}
             </Link>
-            <Link className="btn btn-line" href="/contact">
-              Contact
+            <Link className="btn btn-line" href="/journey">
+              Explore the journey
             </Link>
           </div>
         </div>
@@ -49,6 +62,48 @@ export default function HomePage() {
         <div className="hero-scroll" aria-hidden="true">
           <span>Scroll</span>
           <i />
+        </div>
+      </section>
+
+      <section
+        className="band convention-hook-band"
+        id={conv.invitationId}
+        tabIndex={-1}
+        aria-labelledby="convention-hook-title"
+      >
+        <div className="wrap">
+          <Reveal className="convention-hook">
+            <figure className="convention-hook-media">
+              <img
+                src={conv.invitationBanner}
+                alt={conv.invitationAlt}
+              />
+              <figcaption>
+                <span lang="en">{conv.flyerCaption.en}</span>
+                <span lang="hi">{conv.flyerCaption.hi}</span>
+              </figcaption>
+            </figure>
+            <div className="convention-hook-copy">
+              <p className="convention-hook-meta">
+                <span className="convention-hook-badge">{conv.homeHook.badge}</span>
+                <span className="convention-hook-live" aria-hidden="true" />
+                <span>{conv.kicker}</span>
+              </p>
+              <h2 id="convention-hook-title">{conv.title}</h2>
+              <p className="lede" lang="hi">
+                {conv.titleHi}
+              </p>
+              <p>{conv.summary}</p>
+              <aside className="convention-special-note" aria-label={conv.specialNote.label}>
+                <p className="kicker">{conv.specialNote.label}</p>
+                <p>{conv.specialNote.text}</p>
+                <p lang="hi">{conv.specialNote.textHi}</p>
+              </aside>
+              <Link className="text-link" href={`/gallery#${conv.id}`}>
+                Full invitation details
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

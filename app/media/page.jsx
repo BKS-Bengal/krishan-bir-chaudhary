@@ -1,5 +1,6 @@
 import Reveal from '../../components/Reveal';
 import {
+  ddKisanFakeInputsVideo,
   featuredMedia,
   kisanKiAwaazArchive,
   press,
@@ -36,7 +37,37 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="band" id={seedBill2025.id}>
+      <section className="band" id={ddKisanFakeInputsVideo.id}>
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="kicker">{ddKisanFakeInputsVideo.kicker}</p>
+            <h2>{ddKisanFakeInputsVideo.title}</h2>
+            <p className="lede" lang="hi">
+              {ddKisanFakeInputsVideo.titleHi}
+            </p>
+            <p className="lede">{ddKisanFakeInputsVideo.summary}</p>
+            <p lang="hi">{ddKisanFakeInputsVideo.summaryHi}</p>
+          </Reveal>
+          <Reveal className="broadcast-card" delay={60}>
+            <p className="media-type">Video · {ddKisanFakeInputsVideo.outlet}</p>
+            <a
+              className="btn btn-solid"
+              href={ddKisanFakeInputsVideo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {ddKisanFakeInputsVideo.cta}
+            </a>
+            <p className="broadcast-card-hi" lang="hi">
+              <a href={ddKisanFakeInputsVideo.href} target="_blank" rel="noopener noreferrer">
+                {ddKisanFakeInputsVideo.ctaHi}
+              </a>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="band muted-band" id={seedBill2025.id}>
         <div className="wrap">
           <Reveal className="section-head">
             <p className="kicker">{seedBill2025.kicker}</p>
