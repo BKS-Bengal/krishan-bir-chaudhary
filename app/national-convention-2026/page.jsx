@@ -339,33 +339,6 @@ export default function NationalConventionPage() {
         </div>
       </section>
 
-      <section className="nc-section nc-section-alt" id="delegates" aria-labelledby="nc-delegates-title">
-        <div className="wrap">
-          <Reveal className="nc-section-head">
-            <p className="nc-kicker">Delegate arrangements</p>
-            <h2 id="nc-delegates-title">{page.delegatesLead}</h2>
-          </Reveal>
-          <div className="nc-delegate-grid">
-            <Reveal className="nc-card" as="article">
-              <p className="kicker">Confirmed in the brief</p>
-              <ul className="nc-list">
-                {conv.delegates.confirmed.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal className="nc-card" as="article" delay={80}>
-              <p className="kicker">Awaiting organiser confirmation</p>
-              <ul className="nc-list">
-                {conv.delegates.pending.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       <section
         className="nc-section"
         id="official-poster"

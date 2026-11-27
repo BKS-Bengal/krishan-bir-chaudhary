@@ -119,39 +119,46 @@ export default function MediaPage() {
             <p className="lede">{pressClippings.summary}</p>
           </Reveal>
           <ul className="press-clippings-grid">
-            {pressClippings.items.map((item, i) => (
-              <Reveal key={item.href} as="li" delay={i * 50}>
-                <figure className="press-clipping-card">
-                  <a
-                    className="press-clipping-thumb"
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open full ${item.outlet} clipping`}
-                  >
-                    <img src={item.thumb} alt={item.thumbAlt} loading="lazy" />
-                  </a>
-                  <figcaption className="press-clipping-copy">
-                    <span className="media-type">{item.type}</span>
-                    <h3 className="media-title">{item.title}</h3>
-                    {item.subtitle ? <p className="press-clipping-subtitle">{item.subtitle}</p> : null}
-                    <p className="media-meta">
-                      {item.outlet}
-                      {item.when ? ` · ${item.when}` : ''}
-                    </p>
-                    <p className="press-clipping-caption">{item.caption}</p>
+            {pressClippings.items.map((item, i) => {
+              const linkTarget = item.openInSameTab ? undefined : '_blank';
+              const linkRel = item.openInSameTab ? undefined : 'noopener noreferrer';
+              const cta = item.cta || 'View full page';
+              return (
+                <Reveal key={item.href} as="li" delay={i * 50}>
+                  <figure className="press-clipping-card">
                     <a
-                      className="magazine-issue-cta"
+                      className="press-clipping-thumb"
                       href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={linkTarget}
+                      rel={linkRel}
+                      aria-label={`${cta}: ${item.title}`}
                     >
-                      View full page
+                      <img src={item.thumb} alt={item.thumbAlt} loading="lazy" />
                     </a>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
+                    <figcaption className="press-clipping-copy">
+                      <span className="media-type">{item.type}</span>
+                      <h3 className="media-title">{item.title}</h3>
+                      {item.subtitle ? (
+                        <p className="press-clipping-subtitle">{item.subtitle}</p>
+                      ) : null}
+                      <p className="media-meta">
+                        {item.outlet}
+                        {item.when ? ` · ${item.when}` : ''}
+                      </p>
+                      <p className="press-clipping-caption">{item.caption}</p>
+                      <a
+                        className="magazine-issue-cta"
+                        href={item.href}
+                        target={linkTarget}
+                        rel={linkRel}
+                      >
+                        {cta}
+                      </a>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              );
+            })}
           </ul>
         </div>
       </section>
@@ -199,7 +206,12 @@ export default function MediaPage() {
             {press.map((item, i) => (
               <Reveal key={item.title} as="li" delay={i * 40}>
                 {item.href ? (
-                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={item.href}
+                    {...(item.href.startsWith('http') || item.href.includes('.')
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                  >
                     <span className="media-type">{item.type}</span>
                     <span className="media-title">
                       {item.title}

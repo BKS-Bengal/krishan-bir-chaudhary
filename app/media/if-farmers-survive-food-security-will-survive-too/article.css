@@ -1,0 +1,67 @@
+.article-page__inner {
+  max-width: 46rem;
+}
+
+.article-page__nav {
+  margin-bottom: 1.4rem;
+}
+
+.article-page__body {
+  color: var(--ink, #1a241c);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.article-page__body p {
+  margin: 0 0 1rem;
+}
+
+.article-page__section {
+  margin-top: 1.75rem;
+}
+
+.article-page__section h2 {
+  margin: 0 0 0.75rem;
+  color: var(--forest, #1f4d38);
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.article-page__section ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.article-page__section li + li {
+  margin-top: 0.35rem;
+}
+
+.article-page__bio {
+  margin-top: 1.5rem;
+  color: var(--muted, #5c6a61);
+}
+
+.article-page__clipping {
+  margin: 2.5rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--stroke, rgba(11, 28, 20, 0.14));
+  background: #fff;
+}
+
+.article-page__clipping img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-page__clipping figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted, #5c6a61);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.article-page__footer-nav {
+  margin-top: 2rem;
+}
