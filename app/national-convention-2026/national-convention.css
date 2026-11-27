@@ -236,9 +236,128 @@
 }
 
 .nc-lead-grid,
-.nc-delegate-grid {
+.nc-delegate-grid,
+.nc-travel-grid {
   display: grid;
   gap: 1rem;
+}
+
+.nc-travel-card,
+.nc-travel-stay {
+  padding: 1.25rem 1.3rem;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nc-travel-card:hover,
+.nc-travel-stay:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(11, 28, 20, 0.1);
+}
+
+.nc-travel-card-top {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.nc-travel-icon-wrap {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  color: #f4f6f2;
+  background: linear-gradient(145deg, var(--nc-field), var(--nc-deep));
+}
+
+.nc-travel-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.nc-travel-card h3,
+.nc-travel-stay h3 {
+  margin: 0;
+  color: var(--nc-field);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.nc-travel-card p,
+.nc-travel-stay p {
+  margin: 0.4rem 0 0;
+  color: var(--nc-muted);
+  line-height: 1.55;
+}
+
+.nc-travel-hi {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--nc-muted);
+}
+
+.nc-travel-distance {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0.65rem 0 0.35rem !important;
+  padding: 0.75rem 0.9rem;
+  background: linear-gradient(135deg, rgba(184, 155, 76, 0.16), rgba(31, 77, 56, 0.08));
+  border: 1px solid rgba(184, 155, 76, 0.35);
+}
+
+.nc-travel-distance strong {
+  color: var(--nc-grain);
+  font-size: 1.35rem;
+  font-family: var(--font-display);
+}
+
+.nc-travel-distance span {
+  color: var(--nc-muted);
+  font-size: 0.92rem;
+}
+
+.nc-travel-code {
+  margin: 0 0 0.3rem !important;
+  color: var(--nc-field) !important;
+  font-weight: 700;
+}
+
+.nc-travel-route-label {
+  margin: 0.55rem 0 0.2rem !important;
+  color: var(--nc-grain) !important;
+  font-weight: 700;
+}
+
+.nc-travel-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  padding: 0.55rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #f4f6f2;
+  background: var(--nc-field);
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nc-travel-link:hover {
+  transform: translateY(-1px);
+  background: var(--nc-deep);
+}
+
+.nc-travel-stay {
+  margin-top: 1.15rem;
+}
+
+.nc-travel-stay .nc-list li {
+  display: grid;
+  gap: 0.15rem;
 }
 
 .nc-card {
@@ -459,6 +578,7 @@
   }
 
   .nc-delegate-grid,
+  .nc-travel-grid,
   .nc-poster-block {
     grid-template-columns: 1fr 1fr;
   }
