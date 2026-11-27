@@ -222,7 +222,124 @@ export default function NationalConventionPage() {
         </div>
       </section>
 
-      <section className="nc-section" aria-labelledby="nc-delegates-title">
+      <section className="nc-section" id="travel" aria-labelledby="nc-travel-title">
+        <div className="wrap">
+          <Reveal className="nc-section-head">
+            <p className="nc-kicker">{page.travelTitle}</p>
+            <h2 id="nc-travel-title">{page.travelLead}</h2>
+            <p className="lede" lang="hi">
+              {page.travelTitleHi} — {page.travelLeadHi}
+            </p>
+          </Reveal>
+
+          <div className="nc-travel-grid">
+            <Reveal className="nc-travel-card" as="article">
+              <div className="nc-travel-card-top">
+                <span className="nc-travel-icon-wrap" aria-hidden="true">
+                  <svg className="nc-travel-icon" viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p className="kicker">{page.travelByAirTitle}</p>
+                  <h3>{page.travelAirportName}</h3>
+                  <p className="lede" lang="hi">
+                    {page.travelByAirTitleHi} · {page.travelAirportNameHi}
+                  </p>
+                </div>
+              </div>
+              <p className="nc-travel-distance">
+                <strong>~{conv.travel.airportDistanceKm} km</strong>
+                <span>{page.travelAirportDistance}</span>
+              </p>
+              <p lang="hi" className="nc-travel-hi">
+                {page.travelAirportDistanceHi}
+              </p>
+              <p>{page.travelAirportRouteNote}</p>
+              <p lang="hi" className="nc-travel-hi">
+                {page.travelAirportRouteNoteHi}
+              </p>
+              <a
+                className="nc-travel-link"
+                href={conv.travel.airportRouteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {page.travelOpenMaps}
+              </a>
+            </Reveal>
+
+            <Reveal className="nc-travel-card" as="article" delay={60}>
+              <div className="nc-travel-card-top">
+                <span className="nc-travel-icon-wrap" aria-hidden="true">
+                  <svg className="nc-travel-icon" viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5V21h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.5 0 5.5.5 5.5 2H6.5C6.5 4.5 8.5 4 12 4zM7.5 14A1.5 1.5 0 1 1 9 15.5 1.5 1.5 0 0 1 7.5 14zm9 0a1.5 1.5 0 1 1 1.5 1.5A1.5 1.5 0 0 1 16.5 14zM6.5 10V7h11v3z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p className="kicker">{page.travelByRailTitle}</p>
+                  <h3>{page.travelRailwayStation}</h3>
+                  <p className="lede" lang="hi">
+                    {page.travelByRailTitleHi} · {page.travelRailwayStationHi}
+                  </p>
+                </div>
+              </div>
+              <p className="nc-travel-code">{page.travelRailwayCode}</p>
+              <p className="nc-travel-route-label">{page.travelRailwayRouteTitle}</p>
+              <p>{page.travelRailwayRouteNote}</p>
+              <p lang="hi" className="nc-travel-hi">
+                {page.travelRailwayRouteNoteHi}
+              </p>
+              <a
+                className="nc-travel-link"
+                href={conv.travel.railwayRouteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {page.travelOpenMaps}
+              </a>
+            </Reveal>
+          </div>
+
+          <Reveal className="nc-travel-stay" as="article" delay={100}>
+            <div className="nc-travel-card-top">
+              <span className="nc-travel-icon-wrap" aria-hidden="true">
+                <svg className="nc-travel-icon" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm10 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zM7 15c-2.33 0-7 1.17-7 3.5V20h14v-1.5C14 16.17 9.33 15 7 15zm10 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-1.5c0-2.33-4.67-3.5-7-3.5z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <p className="kicker">{page.travelStayTitle}</p>
+                <h3>{page.travelStayLead}</h3>
+                <p className="lede" lang="hi">
+                  {page.travelStayTitleHi} — {page.travelStayLeadHi}
+                </p>
+              </div>
+            </div>
+            <ul className="nc-list">
+              {page.travelStayItems.map((item, index) => (
+                <li key={item}>
+                  <span>{item}</span>
+                  <span lang="hi" className="nc-travel-hi">
+                    {page.travelStayItemsHi[index]}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="nc-section nc-section-alt" id="delegates" aria-labelledby="nc-delegates-title">
         <div className="wrap">
           <Reveal className="nc-section-head">
             <p className="nc-kicker">Delegate arrangements</p>
@@ -250,7 +367,7 @@ export default function NationalConventionPage() {
       </section>
 
       <section
-        className="nc-section nc-section-alt"
+        className="nc-section"
         id="official-poster"
         tabIndex={-1}
         aria-labelledby="nc-poster-title"
