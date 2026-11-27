@@ -105,6 +105,23 @@
   color: var(--muted, #5c6a61);
 }
 
+.article-page__download {
+  margin: 2rem 0 0;
+}
+
+.article-page__download-link {
+  gap: 0.55rem;
+  width: max-content;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.article-page__download-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
 .article-page__footer-nav {
   margin-top: 2rem;
 }
